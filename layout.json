@@ -1,0 +1,25 @@
+
+{
+  "name": "CMI",
+  "modules": [
+    {
+      "name": "mod1",
+      "position": [5, 5],
+      "hauteur": 10,
+      "wells": [
+        {
+          "position": [10, 10],
+          "volume_max": 1500,
+          "volume": 500
+        },
+        {
+          "position": [10, 20],
+          "volume_max": 1500,
+          "volume": 0
+        }
+      ]
+    }
+  ],
+  "dimension": [6, 6],
+  "max_high": 500
+}
