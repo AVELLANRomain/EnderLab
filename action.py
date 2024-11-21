@@ -60,12 +60,12 @@ class Action:
     def move_volume(self, well_from: Well, well_to: Well, volume: float):
         """Move some volume from one well to another"""
         initial_coord = well_from.module.get_well_coord(well_from.index)
-        goto(position=initial_coord.position, high=initial_coord.high)
-        take(well_from, volume)
+        self.goto(position=initial_coord.position, high=initial_coord.high)
+        #take(well_from, volume)
 
         final_coord = well_to.module.get_well_coord(well_to.index)
-        goto(position=final_coord.position, high=final_coord.high)
-        drop(well_to, volume)
+        self.goto(position=final_coord.position, high=final_coord.high)
+        #drop(well_to, volume)
 
     def change_tips(self, module: Module):
         self.goto(EJECT_POSITION)
