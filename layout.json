@@ -4,21 +4,41 @@
   "modules": [
     {
       "name": "eppendorf",
-      "position": [0, 2],
+      "position": [-2, 2],
       "hauteur": 50,
       "wells": [
         {
-          "position": [7, 8],
+          "position": [6, 8],
           "volume_max": 1500,
           "volume": 500
         },
         {
-          "position": [21, 8],
+          "position": [20, 8],
           "volume_max": 1500,
           "volume": 0
         },
         {
-          "position": [35, 8],
+          "position": [34, 8],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [48, 8],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [62, 8],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [76, 8],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [90, 8],
           "volume_max": 1500,
           "volume": 0
         },
@@ -26,10 +46,174 @@
           "position": [104, 8],
           "volume_max": 1500,
           "volume": 0
+        },
+
+
+
+
+
+        {
+          "position": [6, 37],
+          "volume_max": 1500,
+          "volume": 500
+        },
+        {
+          "position": [20, 37],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [34, 37],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [48, 37],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [62, 37],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [76, 37],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [90, 37],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [104, 37],
+          "volume_max": 1500,
+          "volume": 0
+        },
+
+
+
+
+        {
+          "position": [6, 66],
+          "volume_max": 1500,
+          "volume": 500
+        },
+        {
+          "position": [20, 66],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [34, 66],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [48, 66],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [62, 66],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [76, 66],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [90, 66],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [104, 66],
+          "volume_max": 1500,
+          "volume": 0
+        },
+
+
+
+
+        {
+          "position": [6, 95],
+          "volume_max": 1500,
+          "volume": 500
+        },
+        {
+          "position": [20, 95],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [34, 95],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [48, 95],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [62, 95],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [76, 95],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [90, 95],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [104, 95],
+          "volume_max": 1500,
+          "volume": 0
+        }
+      ]
+    },
+    {
+      "name": "scott 25ml",
+      "position": [-2, 2],
+      "hauteur": 50,
+      "wells": [
+        {
+          "position": [10, 10],
+          "volume_max": 25000,
+          "volume": 0
+        }
+      ]
+    },
+
+    {
+      "name": "microplaque 95",
+      "position": [-2, 2],
+      "hauteur": 50,
+      "wells": [
+        {
+          "position": [104, 95],
+          "volume_max": 1500,
+          "volume": 0
+        },
+        {
+          "position": [104, 95],
+          "volume_max": 1500,
+          "volume": 0
         }
       ]
     }
   ],
+
   "dimension": [6, 6],
   "max_high": 500
 }

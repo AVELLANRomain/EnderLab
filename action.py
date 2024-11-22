@@ -25,8 +25,8 @@ class Action:
         Move to high
         """
         maxheight=str(50)
-        x=str(position[0])
-        y=str(position[1])
+        x=str(position.x)
+        y=str(position.y)
         z=str(high)
 
         self.cmd(f"G1 Z{maxheight}")
@@ -60,6 +60,7 @@ class Action:
     def move_volume(self, well_from: Well, well_to: Well, volume: float):
         """Move some volume from one well to another"""
         initial_coord = well_from.module.get_well_coord(well_from.index)
+        print(initial_coord)
         self.goto(position=initial_coord.position, high=initial_coord.high)
         #take(well_from, volume)
 
