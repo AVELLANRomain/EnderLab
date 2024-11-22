@@ -4,8 +4,8 @@
   "modules": [
     {
       "name": "eppendorf",
-      "position": [-2, 2],
-      "hauteur": 50,
+      "position": [115, 2],
+      "hauteur": 40,
       "wells": [
         {
           "position": [6, 8],
@@ -182,13 +182,18 @@
         }
       ]
     },
+    
+    
+    
+    
+    
     {
       "name": "scott 25ml",
       "position": [-2, 2],
-      "hauteur": 50,
+      "hauteur": 80,
       "wells": [
         {
-          "position": [10, 10],
+          "position": [18, 14],
           "volume_max": 25000,
           "volume": 0
         }
@@ -198,16 +203,16 @@
     {
       "name": "microplaque 95",
       "position": [-2, 2],
-      "hauteur": 50,
+      "hauteur": 30,
       "wells": [
         {
-          "position": [104, 95],
-          "volume_max": 1500,
+          "position": [26, 17],
+          "volume_max": 200,
           "volume": 0
         },
         {
-          "position": [104, 95],
-          "volume_max": 1500,
+          "position": [89, 116],
+          "volume_max": 200,
           "volume": 0
         }
       ]
