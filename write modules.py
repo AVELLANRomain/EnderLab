@@ -46,7 +46,25 @@ microplate96={"name": "microplate96", "position": [-2, 2], "hauteur": 30, "wells
 dic["modules"].append(microplate96.copy())
 
 
+#module de boite a connes
+i=0
+col=[]
+xj=8 
+yi=26.9
+incr=9
+while i<5:
+    j=0
+    raw=[]
+    while j<12:
+        well={"position": [xj+i*incr, yi+j*incr], "volume_max": 56, "volume": 1}# vol max sert de hauteur pou le pick up, vol sert de statue de remplissage (=0 si plus de conne)
+        raw.append(well)
+        j+=1
+    col.append(raw)
+    i+=1
+#creer le module  
+tipsbox={"name": "tipsbox", "position": [125, 44], "hauteur": 48, "wells": col} #set hauteur a 19 une fois etalonner
+dic["modules"].append(tipsbox.copy())
+
 #save modules
 with open('layout.json', 'w') as fp:
     json.dump(dic, fp, indent=2)
-
