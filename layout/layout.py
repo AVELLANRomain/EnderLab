@@ -7,7 +7,7 @@ EJECT_POSITION = Coord(position=Position(x=0, y=500), high=100)
 
 def init_layout():
     layout = read("layout.json")
-    print(layout)
+    #print(layout)
 
     # Instanciate layout
     modules = []

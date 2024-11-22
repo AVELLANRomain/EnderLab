@@ -8,7 +8,7 @@ if __name__ == "__main__":
     
 
     modules = init_layout()
-    microplate = modules[2]
+    microplate = modules[1]
     eppendorf=modules[0]
     
     printer=serial.Serial('COM3',115200)
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     #test run pour mesurer les mouvement
     # action.cmd("G1 Z40")
     # action.cmd("G1 X-2 Y2")
-    # action.move_volume(microplate.wells[0], microplate.wells[1], 10)
+    # action.move_volume(microplate.wells[0][0], microplate.wells[1][1], 10)
+    # action.move_volume(eppendorf.wells[0], eppendorf.wells[1], 10)
     
     # action.goto([10,10],10)
     
