@@ -41,17 +41,6 @@ class Action:
         #print("Go to ", position, high)
         pass
 
-    def move_volume(self, well_from: Well, well_to: Well, volume: float):
-        """Move some volume from one well to another"""
-        initial_coord = well_from.module.get_well_coord(well_from.index)
-        #print(initial_coord)
-        self.goto(position=initial_coord.position, high=initial_coord.high)
-        #take(well_from, volume)
-
-        final_coord = well_to.module.get_well_coord(well_to.index)
-        self.goto(position=final_coord.position, high=final_coord.high)
-        #drop(well_to, volume)
-
     def pick_cone(self, tipsbox):
         ok=0
         for col in tipsbox.wells:
@@ -82,19 +71,43 @@ class Action:
     def change_tips(self, tipsbox):
         self.eject()
         return self.pick_cone(tipsbox)
+    
+    def mltostep(volume):#fonvtion d'etalonage des volume
+        step=volume
+        return step
+
+    def load(self, well, volume):#preleve un volume dans un puits
+        if volume<well.volume:
+            coord = well.module.get_well_coord(well.index)
+            #print(coord)
+            self.goto(position=coord.position, high=coord.high)
+            
+            # 
+            self.cmd("G1 E-"+str(self.mltostep(volume)))
+            well.volume=well.volume-volume
+            return well
+        else:
+            print(f"not enough volume in {well.name}")
+            
+    def drop(self, well, volume):
+        if volume+well.volume>well.volume_max:
+            coord = well.module.get_well_coord(well.index)
+            #print(coord)
+            self.goto(position=coord.position, high=coord.high)
+            self.cmd("G1 E"+str(self.mltostep(volume)))
+            well.volume=well.volume+volume
+            return well
+        else:
+            print(f"not enough room in {well.name}")
+
+    def move_volume(self, well_from: Well, well_to: Well, volume: float):
+        """Move some volume from one well to another"""
+        well_from=self.load(well_from, volume)
+        well_to=self.drop(well_to,volume)
+        return well_from, well_to
 
 
 
-
-    def pippet(well, volume):
-        # Generate command for take
-
-        well.volume -= volume
-        print(f"Take volume {volume}")
-        print(well.volume)
-
-
-    def drop(well, volume):
         # Generate command for drop
         well.volume += volume
         print(f"Drop volume {volume}")

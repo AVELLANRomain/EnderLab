@@ -8,14 +8,14 @@ if __name__ == "__main__":
     
 
     modules = init_layout()
-    #eppendorf=modules[0] #a repositionner
-    #microplate = modules[1] #a repositionner
+    eppendorf=modules[0] #a repositionner
+    microplate = modules[1] #a repositionner
     tipsbox=modules[2]
     
     
     printer=serial.Serial('COM3',115200)
     action = Action(printer)
-    
+  
     # go over the layout
     action.cmd("G1 Z105") #hauteur max
     # auto home axis X and Y
@@ -40,26 +40,15 @@ if __name__ == "__main__":
     # action.eject()
     # tipsbox=action.change_tips(tipsbox)
     
-    
-    
-    
-    
     #test pour les eppendorf
-    # action.cmd("G1 Z65") # hauteur max eppendorf
-    
-    
-    #eject position :
-    # action.cmd("G1 X180 Y-20")
-    
+    # action.cmd("G1 Z65") # hauteur des puits
+    # action.cmd("G1 X17 Y50") # puits 0,0
     
     
     
     #action de pipetage
+    # action.load(eppendorf.wells[0][0])
+    #action.drop(microplate.wells[0][0])
     # action.move_volume(microplate.wells[0][0], microplate.wells[1][1], 10)
-    # action.move_volume(eppendorf.wells[0], eppendorf.wells[1], 10)
-    
-    
+    # action.move_volume(eppendorf.wells[0][0], eppendorf.wells[1][1], 10)
 
-    # action.move_volume(module.wells[0], module.wells[1], 100)
-
-    # action.change_tips()

@@ -1,7 +1,7 @@
 import json
 
 #remplire les eppendorf
-dic={"name": "CMI", "dimension": [6, 6], "max_high": 500, "modules":[]}
+dic={"name": "CMI", "dimension": [6, 6], "max_high": 105, "modules":[]}
 
 
 #creer le module eppendorf
@@ -22,7 +22,7 @@ while i<4:
     col.append(raw)
     i+=1
 #creer le module  
-eppendorf={"name": "eppendorf", "position": [115, 2], "hauteur": 40, "wells": col}
+eppendorf={"name": "eppendorf", "position": [125, 44], "hauteur": 65, "wells": col}
 dic["modules"].append(eppendorf.copy())
 
 
@@ -30,7 +30,7 @@ dic["modules"].append(eppendorf.copy())
 i=0
 col=[]
 xi=26
-yj=17
+yj=16
 incr=9
 while i<8:
     j=0
@@ -42,7 +42,7 @@ while i<8:
     col.append(raw)
     i+=1
 #creer le module  
-microplate96={"name": "microplate96", "position": [-2, 2], "hauteur": 30, "wells": col}
+microplate96={"name": "microplate96", "position": [8, 44], "hauteur": 56, "wells": col}
 dic["modules"].append(microplate96.copy())
 
 
@@ -64,6 +64,10 @@ while i<5:
 #creer le module  
 tipsbox={"name": "tipsbox", "position": [125, 44], "hauteur": 48, "wells": col} #set hauteur a 19 une fois etalonner
 dic["modules"].append(tipsbox.copy())
+
+#module bouteille scott
+well=well={"position": [18, 18], "volume_max": 25000, "volume": 25000}
+scott25ml={"name": "scott25ml", "position": [125, 44], "hauteur": 105, "wells": [[well]]}
 
 #save modules
 with open('layout.json', 'w') as fp:
