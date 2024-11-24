@@ -1,4 +1,10 @@
 {
-    "name": "protocol 1"
+    "name": "protocol 1",
+    "actions":[
+        {"name": "load", 
+        "well": "eppendorf.wells[0][0]",
+        "volume": "10"}
+        
+        ]
 
 }

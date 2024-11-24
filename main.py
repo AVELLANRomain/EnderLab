@@ -8,10 +8,10 @@ if __name__ == "__main__":
     
 
     modules = init_layout()
-    eppendorf=modules[0] #a repositionner
-    microplate = modules[1] #a repositionner
+    eppendorf=modules[0] 
+    microplate = modules[1] 
     tipsbox=modules[2]
-    
+    scott25ml=modules[3]
     
     printer=serial.Serial('COM3',115200)
     action = Action(printer)
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     
     
     #action de pipetage
-    # action.load(eppendorf.wells[0][0])
+    # action.load(eppendorf.wells[0][0], 10)
     #action.drop(microplate.wells[0][0])
     # action.move_volume(microplate.wells[0][0], microplate.wells[1][1], 10)
     # action.move_volume(eppendorf.wells[0][0], eppendorf.wells[1][1], 10)

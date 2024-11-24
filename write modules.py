@@ -68,7 +68,8 @@ dic["modules"].append(tipsbox.copy())
 #module bouteille scott
 well=well={"position": [18, 18], "volume_max": 25000, "volume": 25000}
 scott25ml={"name": "scott25ml", "position": [125, 44], "hauteur": 105, "wells": [[well]]}
+dic["modules"].append(scott25ml.copy())
 
 #save modules
-with open('layout.json', 'w') as fp:
+with open('modules.json', 'w') as fp:
     json.dump(dic, fp, indent=2)
