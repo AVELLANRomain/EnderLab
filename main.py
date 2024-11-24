@@ -1,16 +1,22 @@
-from action import Action
+from action import ActionController
 from layout import Layout
 from printer import Printer
+from protocol import Protocol
 
 if __name__ == "__main__":
     printer = Printer(fake=True)
-    action = Action(printer)
+    action = ActionController(printer)
 
     layout = Layout()
     # First time
     # layout.create(path="layout_1.json")
     # Usage
     layout.load(path="layout_1.json")
+
+    protocol = Protocol(
+        layout=layout, action_controller=action, path="protocol.json", create=False
+    )
+    protocol.run()
 
     ##### TEST hardware #####
     eppendorf = layout.modules[0]

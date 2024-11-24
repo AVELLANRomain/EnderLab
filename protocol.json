@@ -1,11 +1,14 @@
 {
     "name": "protocol 1",
-    "actions":[
-        {"name": "load", 
-        "module": "eppendorf",
-        "well_index": [0,0],
-        "volume": "10"}
-        
-        ]
-
+    "actions": [
+        {
+            "name": "load",
+            "module": 0,
+            "well_index": [
+                0,
+                0
+            ],
+            "volume": "10"
+        }
+    ]
 }

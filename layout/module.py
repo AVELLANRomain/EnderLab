@@ -30,19 +30,22 @@ class Module:
             wells.append(row)
         return wells
 
-    def get_well_coord(self, index):
-        well = self.wells[index[0]][index[1]]
+    def get_well_coord(self, index: tuple[int, int]):
+        well = self.get_well(index)
         hauteur = self.hauteur if self.hauteur is not None else well.hauteur
         return Coord(self.position.add(well.position), hauteur)
+
+    def get_well(self, index: tuple[int, int]):
+        return self.wells[index[0]][index[1]]
 
 
 class Well:
     def __init__(
         self,
-        index,
+        index: tuple[int, int],
         module: Module,
-        position,
-        volume_max,
+        position: Position,
+        volume_max: float,
         name=None,
         volume=0,
         hauteur=None,

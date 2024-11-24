@@ -4,7 +4,7 @@ from layout import Module, Well
 from printer import Printer
 
 
-class Action:
+class ActionController:
 
     def __init__(self, printer: Printer):
         self.printer = printer
@@ -67,23 +67,15 @@ class Action:
         self.eject()
         return self.pick_cone(tipsbox)
 
-    def mltostep(volume: float):
-        """
-        Volume alibration function
-        """
-        step = volume
-        return step
-
-    def load(self, well: Well, volume: float):
+    def load(self, well: Well, volume: float) -> Well:
         """
         Take a volume from the well
         """
         if volume < well.volume:
             coord = well.module.get_well_coord(well.index)
             self.goto(position=coord.position, high=coord.high)
-            self.cmd(f"G1 E-{self.mltostep(volume)}")
+            self.cmd(f"G1 E-{mltostep(volume)}")
             well.volume = well.volume - volume
-            return well
         else:
             print(f"not enough volume in {well.name}")
 
@@ -91,9 +83,8 @@ class Action:
         if volume + well.volume > well.volume_max:
             coord = well.module.get_well_coord(well.index)
             self.goto(position=coord.position, high=coord.high)
-            self.cmd(f"G1 E{self.mltostep(volume)}")
+            self.cmd(f"G1 E{mltostep(volume)}")
             well.volume = well.volume + volume
-            return well
         else:
             print(f"not enough room in {well.name}")
 
@@ -101,4 +92,11 @@ class Action:
         """Move some volume from one well to another"""
         well_from = self.load(well_from, volume)
         well_to = self.drop(well_to, volume)
-        return well_from, well_to
+
+
+def mltostep(volume: float):
+    """
+    Volume alibration function
+    """
+    step = volume
+    return step
