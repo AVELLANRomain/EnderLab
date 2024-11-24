@@ -10,7 +10,7 @@
       "name": "eppendorf",
       "position": [
         125,
-        44
+        161
       ],
       "hauteur": 65,
       "wells": [
@@ -283,8 +283,8 @@
     {
       "name": "microplate96",
       "position": [
-        8,
-        44
+        125,
+        83
       ],
       "hauteur": 56,
       "wells": [
@@ -1077,7 +1077,7 @@
     {
       "name": "tipsbox",
       "position": [
-        125,
+        8,
         44
       ],
       "hauteur": 48,
@@ -1570,6 +1570,26 @@
             ],
             "volume_max": 56,
             "volume": 1
+          }
+        ]
+      ]
+    },
+    {
+      "name": "scott25ml",
+      "position": [
+        8,
+        200
+      ],
+      "hauteur": 105,
+      "wells": [
+        [
+          {
+            "position": [
+              18,
+              18
+            ],
+            "volume_max": 25000,
+            "volume": 25000
           }
         ]
       ]

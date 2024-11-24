@@ -16,17 +16,17 @@ class Module:
     def create_wells(self, raw_wells: list):
         wells = []
         for indx, Row in enumerate(raw_wells):
-            row=[]
+            row = []
             for indy, well in enumerate(Row):
-                #print("well:",well)
-                index=[indx,indy]
+                # print("well:",well)
+                index = [indx, indy]
                 name = well.pop("name", f"well_{index}")
                 raw_position = well.pop("position")
                 position = Position.from_list(raw_position)
                 row.append(
                     Well(module=self, index=index, name=name, position=position, **well)
                 )
-            #print(row)
+            # print(row)
             wells.append(row)
         return wells
 
