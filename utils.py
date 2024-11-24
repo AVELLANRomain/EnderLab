@@ -24,3 +24,8 @@ class Coord:
 def read(path):
     with open(path) as f:
         return json.load(f)
+
+
+def write(path, data):
+    with open(path, "w") as fp:
+        json.dump(data, fp, indent=2)

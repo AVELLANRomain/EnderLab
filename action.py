@@ -1,6 +1,6 @@
 import time
 
-from layout import Well
+from layout import Module, Well
 from printer import Printer
 
 
@@ -44,7 +44,7 @@ class Action:
 
         # print("Go to ", position, high)
 
-    def pick_cone(self, tipsbox):
+    def pick_cone(self, tipsbox: Module):
         for col in tipsbox.wells:
             for well in col:
                 if well.volume == 1:
@@ -63,18 +63,18 @@ class Action:
         inp = input("eject input")
         print("Eject")
 
-    def change_tips(self, tipsbox):
+    def change_tips(self, tipsbox: Module):
         self.eject()
         return self.pick_cone(tipsbox)
 
-    def mltostep(volume):
+    def mltostep(volume: float):
         """
         Volume alibration function
         """
         step = volume
         return step
 
-    def load(self, well, volume):
+    def load(self, well: Well, volume: float):
         """
         Take a volume from the well
         """
