@@ -34,7 +34,7 @@ class Protocol:
     def run(self):
         for action in self.actions:
             method = action["name"]
-
+            print(method)
             match method:
                 case "pick_cone":
                     module = self._get_module(action["module"])
@@ -48,8 +48,8 @@ class Protocol:
                     well = self._get_well(action["module"], action["well_index"])
                     self.controller.load(well, action["volume"])
                 case "drop":
-                    module = self._get_module(action["module"])
-                    self.controller.load()
+                    well = self._get_well(action["module"], action["well_index"])
+                    self.controller.drop(well, action["volume"])
                 case "move_volume":
                     well_from = self._get_well(
                         action["module_from"], action["well_index_from"]
@@ -60,7 +60,7 @@ class Protocol:
                     self.controller.move_volume(well_from, well_to, action["volume"])
 
     def _get_module(self, module: int):
-        return self.layout.module[module]
+        return self.layout.modules[module]
 
     def _get_well(self, module: int, well_index: tuple[int, int]) -> Well:
         return self._get_module(module).get_well(well_index)

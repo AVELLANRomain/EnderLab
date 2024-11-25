@@ -1,0 +1,131 @@
+{
+  "name": "alliquot",
+  "actions": [
+    {
+      "name": "load",
+      "module": 3,
+      "well_index": [
+        0,
+        0
+      ],
+      "volume": 200
+    },
+    {
+      "name": "drop",
+      "module": 0,
+      "well_index": [
+        0,
+        0
+      ],
+      "volume": 200
+    },
+    {
+      "name": "load",
+      "module": 3,
+      "well_index": [
+        0,
+        0
+      ],
+      "volume": 200
+    },
+    {
+      "name": "drop",
+      "module": 0,
+      "well_index": [
+        0,
+        1
+      ],
+      "volume": 200
+    },
+    {
+      "name": "load",
+      "module": 3,
+      "well_index": [
+        0,
+        0
+      ],
+      "volume": 200
+    },
+    {
+      "name": "drop",
+      "module": 0,
+      "well_index": [
+        0,
+        2
+      ],
+      "volume": 200
+    },
+    {
+      "name": "load",
+      "module": 3,
+      "well_index": [
+        0,
+        0
+      ],
+      "volume": 200
+    },
+    {
+      "name": "drop",
+      "module": 0,
+      "well_index": [
+        0,
+        3
+      ],
+      "volume": 200
+    },
+    {
+      "name": "load",
+      "module": 3,
+      "well_index": [
+        0,
+        0
+      ],
+      "volume": 200
+    },
+    {
+      "name": "drop",
+      "module": 0,
+      "well_index": [
+        0,
+        4
+      ],
+      "volume": 200
+    },
+    {
+      "name": "load",
+      "module": 3,
+      "well_index": [
+        0,
+        0
+      ],
+      "volume": 200
+    },
+    {
+      "name": "drop",
+      "module": 0,
+      "well_index": [
+        0,
+        5
+      ],
+      "volume": 200
+    },
+    {
+      "name": "load",
+      "module": 3,
+      "well_index": [
+        0,
+        0
+      ],
+      "volume": 200
+    },
+    {
+      "name": "drop",
+      "module": 0,
+      "well_index": [
+        0,
+        6
+      ],
+      "volume": 200
+    }
+  ]
+}

@@ -19,7 +19,7 @@ class Layout:
         layout = read("modules.json")
         modules = []
 
-        eppendorf = self.place_module(layout["modules"][0], [4, 4])
+        eppendorf = self.place_module(layout["modules"][0], [1, 3])
         modules.append(eppendorf)
 
         microplate = self.place_module(layout["modules"][1], [4, 2])
@@ -28,7 +28,7 @@ class Layout:
         tipsbox = self.place_module(layout["modules"][2], [1, 1])
         modules.append(tipsbox)
 
-        scott25ml = self.place_module(layout["modules"][3], [1, 5])
+        scott25ml = self.place_module(layout["modules"][3], [5, 1])
         modules.append(scott25ml)
 
         self.save(path, modules)

@@ -71,16 +71,17 @@ class ActionController:
         """
         Take a volume from the well
         """
-        if volume < well.volume:
+        if volume <= well.volume:
             coord = well.module.get_well_coord(well.index)
-            self.goto(position=coord.position, high=coord.high)
+            self.goto(position=coord.position, high=well.load_height)
             self.cmd(f"G1 E-{mltostep(volume)}")
             well.volume = well.volume - volume
         else:
             print(f"not enough volume in {well.name}")
 
     def drop(self, well, volume):
-        if volume + well.volume > well.volume_max:
+        print(volume + well.volume, well.volume_max)
+        if volume + well.volume <= well.volume_max:
             coord = well.module.get_well_coord(well.index)
             self.goto(position=coord.position, high=coord.high)
             self.cmd(f"G1 E{mltostep(volume)}")
@@ -98,5 +99,5 @@ def mltostep(volume: float):
     """
     Volume alibration function
     """
-    step = volume
+    step = (13/100)*volume
     return step

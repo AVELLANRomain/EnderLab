@@ -5,7 +5,7 @@ from utils import Coord, Position
 
 class Module:
     def __init__(
-        self, name, wells, position: list[float], hauteur=None, *args, **kwargs
+        self, name, wells, position: list[float], hauteur=None,  *args, **kwargs
     ):
         self.id = uuid.uuid4()
         self.name = name
@@ -46,6 +46,7 @@ class Well:
         module: Module,
         position: Position,
         volume_max: float,
+        load_height,
         name=None,
         volume=0,
         hauteur=None,
@@ -58,6 +59,7 @@ class Well:
         self.position = position
         self.volume = volume
         self.hauteur = hauteur
+        self.load_height=load_height
 
     @property
     def id(self):

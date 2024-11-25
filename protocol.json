@@ -3,12 +3,21 @@
     "actions": [
         {
             "name": "load",
+            "module": 3,
+            "well_index": [
+                0,
+                0
+            ],
+            "volume": 10
+        },
+        {
+            "name": "drop",
             "module": 0,
             "well_index": [
                 0,
                 0
             ],
-            "volume": "10"
+            "volume": 10
         }
     ]
 }
