@@ -14,8 +14,9 @@ if __name__ == "__main__":
     layout.load(path="layout_1.json")
 
     protocol = Protocol(
-        layout=layout, action_controller=action, path="alliquot.json", create=False
+        layout=layout, action_controller=action, path="CMI.json", create=False
     )
+    
     # protocol.run()
 
     ##### TEST hardware #####
@@ -24,12 +25,12 @@ if __name__ == "__main__":
     tipsbox = layout.modules[2]
     scott25ml = layout.modules[3]
 
-    # # go over the layout
-    # action.cmd("G1 Z105")  # hauteur max
-    # # auto home axis X and Y
-    # action.cmd("G28 X Y")
-    # #disable cold extrusion safty
-    # action.cmd("M302 P1")
+    # go over the layout
+    action.cmd("G1 Z105")  # hauteur max
+    # auto home axis X and Y
+    action.cmd("G28 X Y")
+    #disable cold extrusion safty
+    action.cmd("M302 P1")
 
     #set travel limit
     # action.cmd("M503") #print setings

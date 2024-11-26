@@ -50,6 +50,9 @@ class Protocol:
                 case "drop":
                     well = self._get_well(action["module"], action["well_index"])
                     self.controller.drop(well, action["volume"])
+                case "mix":
+                    well = self._get_well(action["module"], action["well_index"])
+                    self.controller.mix(well, action["volume"], action["number"])
                 case "move_volume":
                     well_from = self._get_well(
                         action["module_from"], action["well_index_from"]

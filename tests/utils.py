@@ -8,7 +8,7 @@ class FakeConnexion:
 
     def write(self, command: str) -> str:
         time.sleep(self.latency)
-        print(command)
+        #print(command)
 
     def readline(self) -> str:
         time.sleep(self.latency)
