@@ -27,6 +27,7 @@ if __name__ == "__main__":
 
     # go over the layout
     action.cmd("G1 Z105")  # hauteur max
+    # action.cmd("G1 Z105 F10") #F**** vitesse de deplacement en Z
     # auto home axis X and Y
     action.cmd("G28 X Y")
     #disable cold extrusion safty
