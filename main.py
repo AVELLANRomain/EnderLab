@@ -9,14 +9,14 @@ if __name__ == "__main__":
 
     layout = Layout()
     # First time
-    layout.create(path="layout_1.json")
+    layout.create(path="layout/layout_1.json")
     # Usage
-    layout.load(path="layout_1.json")
+    layout.load(path="layout/layout_1.json")
 
     protocol = Protocol(
         layout=layout, action_controller=action, path="CMI.json", create=False
     )
-    
+
     # protocol.run()
 
     ##### TEST hardware #####
@@ -30,14 +30,12 @@ if __name__ == "__main__":
     # action.cmd("G1 Z105 F10") #F**** vitesse de deplacement en Z
     # auto home axis X and Y
     action.cmd("G28 X Y")
-    #disable cold extrusion safty
+    # disable cold extrusion safty
     action.cmd("M302 P1")
 
-    #set travel limit
+    # set travel limit
     # action.cmd("M503") #print setings
     # action.cmd("M208 X200 Y200 Z90")
-
-
 
     # test protocol alliquotage
     # tipsbox = action.pick_cone(tipsbox)

@@ -16,7 +16,7 @@ class Layout:
         Interface to create layout
         Unit we replace it by GUI
         """
-        layout = read("modules.json")
+        layout = read("data/modules.json")
         modules = []
 
         eppendorf = self.place_module(layout["modules"][0], [1, 3])

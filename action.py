@@ -1,5 +1,3 @@
-import time
-
 from layout import Module, Well
 from printer import Printer
 
@@ -16,15 +14,14 @@ class ActionController:
         General command function
         command example: "G1 X10 Y18 Z10 E10"
         """
-        #print(command)
         self.printer.write(command)
         response: str | None = None
 
         # Wait until command has finished
         while response != Printer.OK:
             response = self.printer.read()
-            #time.sleep(0.1)  # Wait for 0.1 second
-            #print(response)
+            # time.sleep(0.1)  # Wait for 0.1 second
+            # print(response)
 
     # These function has to convert position & high into commands
     def goto(self, position, high):
@@ -72,7 +69,7 @@ class ActionController:
         """
         Take a volume from the well
         """
-        print("load ",volume)
+        print("load ", volume)
         if volume <= well.volume:
             coord = well.module.get_well_coord(well.index)
             self.goto(position=coord.position, high=well.load_height)
@@ -91,18 +88,18 @@ class ActionController:
             well.volume = well.volume + volume
         else:
             print(f"not enough room in {well.name}")
-            
+
     def mix(self, well, volume, number):
         if volume <= well.volume:
             coord = well.module.get_well_coord(well.index)
             self.goto(position=coord.position, high=well.load_height)
-            
-            i=0
-            while i<number:
+
+            i = 0
+            while i < number:
                 self.cmd(f"G1 E-{mltostep(volume)}")
                 self.cmd(f"G1 E{mltostep(volume)}")
-                i+=1
-            self.drop(well,0)
+                i += 1
+            self.drop(well, 0)
         else:
             print(f"not enough volume in {well.name}")
 
@@ -116,5 +113,5 @@ def mltostep(volume: float):
     """
     Volume alibration function
     """
-    step = (13/100)*volume
+    step = (13 / 100) * volume
     return step
