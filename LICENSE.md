@@ -1,0 +1,26 @@
+EFCore.BulkExtensions DUAL LICENSE AGREEMENT
+Version 1.0, January 2024
+AUTHOR: Copyright (c) 2024-present: Pierre Assemat
+PUBLISHER: CODIS LLC
+
+"You" mean an individual or Legal Entity exercising permissions granted by this License.
+"Software" means source code and/or binary form and/or documentation.
+"Package": EFCore.BulkExtensions Software
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+BY INSTALLING, COPYING, OR OTHERWISE USING THE PRODUCT, YOU AGREE TO BE
+BOUND BY ALL OF THE TERMS AND CONDITIONS OF THE DUAL LICENSE AGREEMENT.
+
+AUTHOR & PUBLISHER provide the Package under the DUAL LICENSE AGREEMENT
+
+Licenses are granted based upon You meeting the qualified criteria as stated.
+Once granted, You must reference the granted license only in all documentation.
+
+(1) SOFTWARE is licensed to You under the free community License if meet at least 1 of conditions:
+- You are consuming the PACKAGE as a company/individual with less than 1 million USD annual gross revenue.
+- You are consuming the PACKAGE in the capacity of a Non-profit(Non-governmental) Organization or Registered Charity.
+- You are consuming the PACKAGE for use in software licensed under an Free Open Source license.
+
+(2) For all other scenarios, Packages in source code or binary form are licensed to You under the Commercial License which may be purchased by visiting:
+https://codis.tech/efcorebulk
