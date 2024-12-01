@@ -17,7 +17,12 @@ Run `poetry install`
 
 ## Usage
 
-Run `python main.py`
+```py
+poetry install
+poetry shell
+
+python main.py
+```
 
 ## License
 

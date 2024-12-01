@@ -1,11 +1,10 @@
+from api import call_cmd, call_eject
 from layout import Module, Well
-from printer import Printer
 
 
 class ActionController:
 
-    def __init__(self, printer: Printer):
-        self.printer = printer
+    def __init__(self):
         self.maxheight = 105
         self.eject_pos = "G1 X190 Y10"
 
@@ -14,14 +13,7 @@ class ActionController:
         General command function
         command example: "G1 X10 Y18 Z10 E10"
         """
-        self.printer.write(command)
-        response: str | None = None
-
-        # Wait until command has finished
-        while response != Printer.OK:
-            response = self.printer.read()
-            # time.sleep(0.1)  # Wait for 0.1 second
-            print(response)
+        call_cmd(command)
 
     # These function has to convert position & high into commands
     def goto(self, position, high):
@@ -58,8 +50,7 @@ class ActionController:
     def eject(self):
         self.cmd(f"G1 Z{self.maxheight}")
         self.cmd(self.eject_pos)
-        inp = input("eject input")
-        print("Eject")
+        call_eject()
 
     def change_tips(self, tipsbox: Module):
         self.eject()

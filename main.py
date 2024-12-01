@@ -1,11 +1,20 @@
 from action import ActionController
 from layout import Layout
-from printer import Printer
 from protocol import Protocol
 
+
+def printer_init(action):
+    # go over the layout
+    action.cmd("G1 Z105")  # hauteur max
+    # action.cmd("G1 Z105 F10") #F**** vitesse de deplacement en Z
+    # auto home axis X and Y
+    action.cmd("G28 X Y")
+    # disable cold extrusion safty
+    action.cmd("M302 P1")
+
+
 if __name__ == "__main__":
-    printer = Printer(fake=True)
-    action = ActionController(printer)
+    action = ActionController()
 
     layout = Layout()
     # First time
@@ -17,7 +26,8 @@ if __name__ == "__main__":
         layout=layout, action_controller=action, path="data/CMI.json", create=False
     )
 
-    # protocol.run()
+    # Init printer
+    printer_init(action)
 
     ##### TEST hardware #####
     eppendorf = layout.modules[0]
@@ -25,13 +35,7 @@ if __name__ == "__main__":
     tipsbox = layout.modules[2]
     scott25ml = layout.modules[3]
 
-    # go over the layout
-    action.cmd("G1 Z105")  # hauteur max
-    # action.cmd("G1 Z105 F10") #F**** vitesse de deplacement en Z
-    # auto home axis X and Y
-    action.cmd("G28 X Y")
-    # disable cold extrusion safty
-    action.cmd("M302 P1")
+    protocol.run()
 
     # set travel limit
     # action.cmd("M503") #print setings
