@@ -4,17 +4,17 @@ from printer import Printer
 from protocol import Protocol
 
 if __name__ == "__main__":
-    printer = Printer(fake=False)
+    printer = Printer(fake=True)
     action = ActionController(printer)
 
     layout = Layout()
     # First time
-    layout.create(path="layout/layout_1.json")
+    layout.create(path="data/layout_1.json")
     # Usage
-    layout.load(path="layout/layout_1.json")
+    layout.load(path="data/layout_1.json")
 
     protocol = Protocol(
-        layout=layout, action_controller=action, path="CMI.json", create=False
+        layout=layout, action_controller=action, path="data/CMI.json", create=False
     )
 
     # protocol.run()

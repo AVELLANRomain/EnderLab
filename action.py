@@ -21,7 +21,7 @@ class ActionController:
         while response != Printer.OK:
             response = self.printer.read()
             # time.sleep(0.1)  # Wait for 0.1 second
-            # print(response)
+            print(response)
 
     # These function has to convert position & high into commands
     def goto(self, position, high):
