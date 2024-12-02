@@ -1,11 +1,11 @@
 import requests
 
-DEV_MODE = True
+DEV_MODE = False
 
 if DEV_MODE:
     URL = "http://localhost"
 else:
-    URL = "http://192.168.1.141"
+    URL = "http://192.168.1.141:5000"
 
 
 def call_cmd(command: str):

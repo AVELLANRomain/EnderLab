@@ -35,7 +35,7 @@ if __name__ == "__main__":
     tipsbox = layout.modules[2]
     scott25ml = layout.modules[3]
 
-    protocol.run()
+    # protocol.run()
 
     # set travel limit
     # action.cmd("M503") #print setings
