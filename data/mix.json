@@ -1,15 +1,62 @@
 {
     "name": "mix",
-    "elementary": 1,
-    "wells": {"well 1":[1,[0,1]]},
-    "param": {"volume": 100, "number": 2},
-    "actions": [
+    "elementary": false,
+    "mapping": {
+        "wells": {"well_1": [1, [0, 1]]},
+        "params": {"volume_1": 100, "number_1": 2}
+    },
+    "steps": [
         {
             "name": "mix",
-            "well_index": "well 1",
-            "volume": "volume",
-            "number": "number"
+            "elementary": true,
+            "mapping": {
+                "wells": {"well": "well_1"},
+                "params": {"volume": "volume_1", "number": "number_1"}
+            },
+            "steps": {
+                "name": "mix",
+                "well_index": "well",
+                "volume": "volume",
+                "number": "number"
+            }
+        },
+        {
+            "name": "multimix",
+            "elementary": false,
+            "mapping": {
+                "wells": {"well_11": "well_1", "well_2": [1, [0, 2]]},
+                "params": {"volume_1": 100, "number_1": 2}
+            },
+            "steps": [
+                {
+                    "name": "mix",
+                    "elementary": true,
+                    "mapping": {
+                        "wells": {"well": "well_11"},
+                        "params": {"volume": "volume_1", "number": "number_1"}
+                    },
+                    "steps": {
+                        "name": "mix",
+                        "well_index": "well",
+                        "volume": "volume",
+                        "number": "number"
+                    }
+                },
+                {
+                    "name": "mix",
+                    "elementary": true,
+                    "mapping": {
+                        "wells": {"well": "well_2"},
+                        "params": {"volume": "volume_1", "number": "number_1"}
+                    },
+                    "steps": {
+                        "name": "mix",
+                        "well_index": "well",
+                        "volume": "volume",
+                        "number": "number"
+                    }
+                }
+            ]
         }
     ]
 }
-        

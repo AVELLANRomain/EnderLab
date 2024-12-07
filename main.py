@@ -1,9 +1,10 @@
-from action import ActionController
 from layout import Layout
-from protocol import Protocol
+from protocol.action import ActionController
+from protocol.protocol import ProtocolRepository
 
 
-def printer_init(action):
+def printer_init():
+    action = ActionController()
     # go over the layout
     action.cmd("G1 Z105")  # hauteur max
     # action.cmd("G1 Z105 F10") #F**** vitesse de deplacement en Z
@@ -14,24 +15,28 @@ def printer_init(action):
 
 
 if __name__ == "__main__":
-    action = ActionController()
+    # Init printer
+    printer_init()
 
     layout = Layout()
     # First time
-    layout.create(path="data/layout_1.json")
+    # layout.create(path="data/layout_1.json")
     # Usage
     layout.load(path="data/layout_1.json")
 
-    protocol = Protocol(
-        layout=layout, action_controller=action, path="data/CMI.json", create=False
-    )
+    # Instantiate Protocol
+    repo = ProtocolRepository(layout=layout)
+    protocol = repo.get(path="data/multimix.json")
 
-    # Init printer
-    printer_init(action)
-    
+    protocol.run()
+
+    protocol = repo.get(path="data/mix.json")
+
     protocol.run()
 
     ##### TEST hardware #####
+    # action = ActionController()
+
     # eppendorf = layout.modules[0]
     # microplate = layout.modules[1]
     # tipsbox = layout.modules[2]

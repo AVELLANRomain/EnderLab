@@ -1,5 +1,5 @@
-from api import call_cmd, call_eject
 from layout import Module, Well
+from protocol.api import call_cmd, call_eject
 
 
 class ActionController:

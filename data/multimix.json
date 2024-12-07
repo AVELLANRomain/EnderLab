@@ -1,36 +1,38 @@
 {
     "name": "multimix",
-    "elementary": 0,
-    "wells": {"well 1":[1,[0,1]], "well 2":[1,[0,2]]},
-    "param": {"volume 1": 100, "number 1": 2},
-    "actions": [
+    "elementary": false,
+    "mapping": {
+        "wells": {"well_1":[1,[0,1]], "well_2":[1,[0,2]]},
+        "params": {"volume 1": 100, "number 1": 2}
+    },
+    "steps": [
         {
             "name": "mix",
-            "elementary": 1,
-            "wells": {"well":"well 1"},
-            "param": {"volume": "volume 1", "number": "number 1"},
-            "actions": [
-                {
-                    "name": "mix",
-                    "well_index": "well",
-                    "volume": "volume",
-                    "number": "number"
-                }
-            ]
+            "elementary": true,
+            "mapping": {
+                "wells": {"well": "well_1"},
+                "params": {"volume": "volume 1", "number": "number 1"}
+            },
+            "steps": {
+                "name": "mix",
+                "well_index": "well",
+                "volume": "volume",
+                "number": "number"
+            }
         },
         {
             "name": "mix",
-            "elementary": 1,
-            "wells": {"well":"well 2"},
-            "param": {"volume": "volume 1", "number": "number 1"},
-            "actions": [
-                {
-                    "name": "mix",
-                    "well_index": "well",
-                    "volume": "volume",
-                    "number": "number"
-                }
-            ]
+            "elementary": true,
+            "mapping": {
+                "wells": {"well": "well_2"},
+                "params": {"volume": "volume 1", "number": "number 1"}
+            },
+            "steps": {
+                "name": "mix",
+                "well_index": "well",
+                "volume": "volume",
+                "number": "number"
+            }
         }
     ]
 }
