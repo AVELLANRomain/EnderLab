@@ -1,0 +1,36 @@
+{
+    "name": "multimix",
+    "elementary": 0,
+    "wells": {"well 1":[1,[0,1]], "well 2":[1,[0,2]]},
+    "param": {"volume 1": 100, "number 1": 2},
+    "actions": [
+        {
+            "name": "mix",
+            "elementary": 1,
+            "wells": {"well":"well 1"},
+            "param": {"volume": "volume 1", "number": "number 1"},
+            "actions": [
+                {
+                    "name": "mix",
+                    "well_index": "well",
+                    "volume": "volume",
+                    "number": "number"
+                }
+            ]
+        },
+        {
+            "name": "mix",
+            "elementary": 1,
+            "wells": {"well":"well 2"},
+            "param": {"volume": "volume 1", "number": "number 1"},
+            "actions": [
+                {
+                    "name": "mix",
+                    "well_index": "well",
+                    "volume": "volume",
+                    "number": "number"
+                }
+            ]
+        }
+    ]
+}

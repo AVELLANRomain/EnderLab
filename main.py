@@ -28,14 +28,14 @@ if __name__ == "__main__":
 
     # Init printer
     printer_init(action)
+    
+    protocol.run()
 
     ##### TEST hardware #####
-    eppendorf = layout.modules[0]
-    microplate = layout.modules[1]
-    tipsbox = layout.modules[2]
-    scott25ml = layout.modules[3]
-
-    # protocol.run()
+    # eppendorf = layout.modules[0]
+    # microplate = layout.modules[1]
+    # tipsbox = layout.modules[2]
+    # scott25ml = layout.modules[3]
 
     # set travel limit
     # action.cmd("M503") #print setings

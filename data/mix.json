@@ -1,0 +1,15 @@
+{
+    "name": "mix",
+    "elementary": 1,
+    "wells": {"well 1":[1,[0,1]]},
+    "param": {"volume": 100, "number": 2},
+    "actions": [
+        {
+            "name": "mix",
+            "well_index": "well 1",
+            "volume": "volume",
+            "number": "number"
+        }
+    ]
+}
+        
