@@ -1,0 +1,14 @@
+{
+    "name": "mouve_volume",
+    "elementary": true,
+    "mapping": {
+        "wells": {"well_from": [1, [0, 1]], "well_to": [1, [0, 1]]},
+        "params": {"volume": 100}
+    },
+    "steps": {
+                "name": "mouve_volume",
+                "well_index_from": "well_from",
+                "well_index_to": "well_to",
+                "volume": "volume"
+            }
+}

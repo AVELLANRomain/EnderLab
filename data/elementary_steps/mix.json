@@ -1,0 +1,14 @@
+{
+    "name": "mix",
+    "elementary": true,
+    "mapping": {
+        "wells": {"well": [1, [0, 1]]},
+        "params": {"volume": 100, "number": 2}
+    },
+    "steps": {
+                "name": "mix",
+                "well_index": "well",
+                "volume": "volume",
+                "number": "number"
+            }
+}

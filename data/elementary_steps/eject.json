@@ -1,0 +1,8 @@
+{
+    "name": "eject",
+    "elementary": true,
+    "mapping": {},
+    "steps": {
+                "name": "eject"
+            }
+}

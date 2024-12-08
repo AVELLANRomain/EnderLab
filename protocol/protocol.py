@@ -47,7 +47,7 @@ class Instruction:
             case "move_volume":
                 module_from, well_index_from = self.action["well_index_from"]
                 well_from = self._get_well(module_from, well_index_from)
-                module_to, well_index_to = self.action["well_index_from"]
+                module_to, well_index_to = self.action["well_index_to"]
                 well_to = self._get_well(module_to, well_index_to)
                 self.controller.move_volume(well_from, well_to, self.action["volume"])
 
@@ -120,6 +120,24 @@ class Protocol:
                         elif param == action["number"]:
                             action["number"] = value
 
+                case "mouve_volume":
+                    for well_id, value in parent_mapping["wells"].items():
+                        if well_id == action["well_index_from"]:
+                            action["well_index_from"] = value
+                        if well_id == action["well_index_to"]:
+                            action["well_index_to"] = value
+                    for param, value in parent_mapping["params"].items():
+                        if param == action["volume"]:
+                            action["volume"] = value
+                case "change_tips":
+                    for well_id, value in parent_mapping["wells"].items():
+                        if well_id == action["well_index"]:
+                            action["well_index"] = value
+                case "pick_cone":
+                    for well_id, value in parent_mapping["wells"].items():
+                        if well_id == action["well_index"]:
+                            action["well_index"] = value
+
             instructions.append(Instruction(layout=self.layout, action=action))
         else:
             for protocol in self.steps:
@@ -141,6 +159,26 @@ class Protocol:
                     instructions.extend(protocol.build_instructions(mapping_resolved))
 
         return instructions
+
+    def to_dic(self, protocol):
+        if protocol.elementary is True:
+            dic = {
+                "name": protocol.name,
+                "elementary": protocol.elementary,
+                "mapping": protocol.mapping,
+                "steps": protocol.steps,
+            }
+            return dic
+        else:
+            dic = {
+                "name": protocol.name,
+                "elementary": protocol.elementary,
+                "mapping": protocol.mapping,
+                "steps": [],
+            }
+            for step in protocol.steps:
+                dic["steps"].append(self.to_dic(step))
+            return dic
 
 
 class ProtocolRepository:

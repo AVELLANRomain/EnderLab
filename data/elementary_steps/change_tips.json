@@ -1,0 +1,12 @@
+{
+    "name": "change_tips",
+    "elementary": true,
+    "mapping": {
+        "wells": {"well": [1, [0, 1]]},
+        "params": {}
+    },
+    "steps": {
+                "name": "change_tips",
+                "well_index": "well"
+            }
+}

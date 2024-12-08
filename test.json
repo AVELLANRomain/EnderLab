@@ -1,0 +1,32 @@
+{
+  "name": "test",
+  "elementary": false,
+  "mapping": {
+    "wells": {
+      "t": [
+        1,
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "params": {}
+  },
+  "steps": [
+    {
+      "name": "pick_cone",
+      "elementary": true,
+      "mapping": {
+        "wells": {
+          "well": "t"
+        },
+        "params": {}
+      },
+      "steps": {
+        "name": "pick_cone",
+        "well_index": "well"
+      }
+    }
+  ]
+}

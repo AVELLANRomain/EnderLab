@@ -1,0 +1,12 @@
+{
+    "name": "pick_cone",
+    "elementary": true,
+    "mapping": {
+        "wells": {"well": [1, [0, 1]]},
+        "params": {}
+    },
+    "steps": {
+                "name": "pick_cone",
+                "well_index": "well"
+            }
+}

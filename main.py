@@ -26,12 +26,12 @@ if __name__ == "__main__":
 
     # Instantiate Protocol
     repo = ProtocolRepository(layout=layout)
-    protocol = repo.get(path="data/multimix.json")
+    # protocol = repo.get(path="data/multimix.json")
 
-    protocol.run()
+    # protocol.run()
 
-    protocol = repo.get(path="data/mix.json")
-
+    #protocol = repo.get(path="data/elementary_steps/pick_cone.json")
+    protocol = repo.get(path="test.json")
     protocol.run()
 
     ##### TEST hardware #####
